@@ -20,4 +20,6 @@ func main() {
 	sp.Age = 21
 	fmt.Println(sp.Age)
 	fmt.Println(s.Age)
+	
+	
 }
