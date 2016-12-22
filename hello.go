@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"golearning/stringutil"
+)
 
 func main() {
-	fmt.Println("Hello world.")
+	fmt.Println(stringutil.Reverse("Hello world."))
 }
