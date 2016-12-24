@@ -2,18 +2,11 @@
 package model
 
 import "math"
-import "fmt"
 
 // Person model
 type Person struct {
 	Name string
 	Age  int
-}
-
-// Inferfact for geometric shapes
-type geomtry interface {
-	Area() float64
-	Perim() float64
 }
 
 type Rect struct {
@@ -37,10 +30,4 @@ func (c Circle) Area() float64 {
 }
 func (c Circle) Perim() float64 {
 	return 2 * math.Pi * c.Radius
-}
-
-func Measure(g geomtry) {
-	fmt.Println(g)
-	fmt.Println(g.Area())
-	fmt.Println(g.Perim())
 }
