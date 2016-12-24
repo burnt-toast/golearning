@@ -2,6 +2,7 @@
 package model
 
 import "math"
+import "fmt"
 
 // Person model
 type Person struct {
@@ -11,29 +12,35 @@ type Person struct {
 
 // Inferfact for geometric shapes
 type geomtry interface {
-	area() float64
-	perim() float64
+	Area() float64
+	Perim() float64
 }
 
-type rect struct {
-	width, height float64
+type Rect struct {
+	Width, Height float64
 }
 
-type circle struct {
-	radius float64
+type Circle struct {
+	Radius float64
 }
 
-func (r rect) area() float64 {
-	return r.width * r.height
+func (r Rect) Area() float64 {
+	return r.Width * r.Height
 }
 
-func (r rect) perim() float64 {
-	return 2*r.width + 2*r.height
+func (r Rect) Perim() float64 {
+	return 2*r.Width + 2*r.Height
 }
 
-func (c circle) area() float64 {
-	return math.Pi * c.radius * c.radius
+func (c Circle) Area() float64 {
+	return math.Pi * c.Radius * c.Radius
 }
-func (c circle) perim() float64 {
-	return 2 * math.Pi * c.radius
+func (c Circle) Perim() float64 {
+	return 2 * math.Pi * c.Radius
+}
+
+func Measure(g geomtry) {
+	fmt.Println(g)
+	fmt.Println(g.Area())
+	fmt.Println(g.Perim())
 }
